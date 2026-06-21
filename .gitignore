@@ -1,0 +1,12 @@
+# Бинарники модов в git НЕ коммитим — они живут в GitHub Releases этого репо.
+# В git только декларативный modlist.toml.
+*.jar
+*.zip
+*.mrpack
+
+# Рабочие/временные
+/dist/
+/build-work/
+/modcache/
+*.log
+.DS_Store
