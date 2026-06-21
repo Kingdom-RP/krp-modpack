@@ -4,10 +4,10 @@
 #
 # ОДНОРАЗОВАЯ НАСТРОЙКА:
 #   Создать секрет DISPATCH_PAT (Settings → Secrets → Actions) — токен с правом
-#   запускать workflow в Kingdom-RP/krp-mod:
+#   слать repository_dispatch в Kingdom-RP/krp-mod:
 #     * classic PAT со scope `repo`, ИЛИ
-#     * fine-grained PAT на репо krp-mod с правами Contents:read + Metadata:read
-#       и Actions: read/write (достаточно для repository_dispatch).
+#     * fine-grained PAT на репо krp-mod с правом Contents: Read and write
+#       (именно WRITE — эндпоинт dispatches требует contents:write; read даёт 403).
 #   GITHUB_TOKEN этого репо не подходит — он не может триггерить чужой репозиторий.
 
 name: Notify krp-mod
