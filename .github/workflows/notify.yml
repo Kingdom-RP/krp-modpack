@@ -1,0 +1,30 @@
+# Уведомляет krp-mod о смене состава модов: при публикации/редактировании Release
+# шлёт repository_dispatch → там запускается workflow "Publish modpack", который
+# пересобирает дистрибутив (читая ассеты этого Release) и деплоит на Pages.
+#
+# ОДНОРАЗОВАЯ НАСТРОЙКА:
+#   Создать секрет DISPATCH_PAT (Settings → Secrets → Actions) — токен с правом
+#   запускать workflow в Kingdom-RP/krp-mod:
+#     * classic PAT со scope `repo`, ИЛИ
+#     * fine-grained PAT на репо krp-mod с правами Contents:read + Metadata:read
+#       и Actions: read/write (достаточно для repository_dispatch).
+#   GITHUB_TOKEN этого репо не подходит — он не может триггерить чужой репозиторий.
+
+name: Notify krp-mod
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger krp-mod rebuild
+        env:
+          GH_TOKEN: ${{ secrets.DISPATCH_PAT }}
+        run: |
+          gh api repos/Kingdom-RP/krp-mod/dispatches \
+            -f event_type=modpack-updated \
+            -F client_payload[tag]="${{ github.event.release.tag_name }}"
