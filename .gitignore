@@ -3,6 +3,7 @@
 *.jar
 *.zip
 *.mrpack
+/mods
 
 # Рабочие/временные
 /dist/

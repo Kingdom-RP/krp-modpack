@@ -11,12 +11,12 @@
 
 # EMI — просмотр рецептов/лута. Самодостаточный, без хард-зависимостей.
 [[mod]]
-file   = "emi-1.1.22+1.21.1+neoforge.jar"
-url    = "https://github.com/Kingdom-RP/krp-modpack/releases/download/v1/emi-1.1.22%2B1.21.1%2Bneoforge.jar"
+file   = "emi-1.1.24+1.21.1+neoforge.jar"
+url    = "https://github.com/Kingdom-RP/krp-modpack/releases/download/v1/emi-1.1.24%2B1.21.1%2Bneoforge.jar"
 sha256 = ""
 
 # Lithium — оптимизация тиков сервера. Самодостаточный.
 [[mod]]
-file   = "lithium-neoforge-0.15.0+mc1.21.1.jar"
-url    = "https://github.com/Kingdom-RP/krp-modpack/releases/download/v1/lithium-neoforge-0.15.0%2Bmc1.21.1.jar"
+file   = "lithium-neoforge-0.15.3+mc1.21.1.jar"
+url    = "https://github.com/Kingdom-RP/krp-modpack/releases/download/v1/lithium-neoforge-0.15.3%2Bmc1.21.1.jar"
 sha256 = ""
